@@ -5,11 +5,11 @@ function feedEater() {
         'ytd-shorts', // Shorts feed
     ]
     for (const selector of elementsToEat) {
-        const feed = document.querySelector(selector)
-        if (feed) {
-            feed.remove()
-            console.log(`${selector} feed removed`)
-        }
+        const elements = document.querySelectorAll(selector)
+        elements.forEach(element => {
+            element.remove()
+            console.log(`${selector} removed`)
+        })
     }
 }
 
