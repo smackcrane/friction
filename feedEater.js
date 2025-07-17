@@ -8,6 +8,8 @@ function feedEater() {
     // 'div.html5-endscreen', // youtube end screen recommendations, alternative selector
     "shreddit-feed[reload-url^='/svc/shreddit/feeds/']", // reddit home feed, popular feed
     "shreddit-gallery-carousel", // reddit top bar recommendations
+    "div[data-finite-scroll-hotkey-context='FEED']", // linkedin homepage feed
+    "div#credential_picker_container", // stackexchange "sign in with google" pop-up
   ];
   for (const selector of elementsToEat) {
     const elements = document.querySelectorAll(selector);
