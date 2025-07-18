@@ -12,13 +12,23 @@
   "content_scripts": [
     {
       "matches": [
-        "*://*.youtube.com/*",
         "*://*.reddit.com/*",
         "*://*.linkedin.com/*",
         "*://*.stackexchange.com/*",
         "*://*.stackoverflow.com/*"
       ],
       "js": ["feedEater.js"]
+    },
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["finiteScroll.js"]
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": ["fetch.js"],
+      "matches": ["<all_urls>"]
     }
   ]
 }
