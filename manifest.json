@@ -11,24 +11,8 @@
 
   "content_scripts": [
     {
-      "matches": [
-        "*://*.reddit.com/*",
-        "*://*.linkedin.com/*",
-        "*://*.stackexchange.com/*",
-        "*://*.stackoverflow.com/*"
-      ],
+      "matches": ["<all_urls>"],
       "js": ["feedEater.js"]
-    },
-    {
-      "matches": ["*://*.youtube.com/*"],
-      "js": ["finiteScroll.js"]
-    }
-  ],
-
-  "web_accessible_resources": [
-    {
-      "resources": ["fetch.js"],
-      "matches": ["<all_urls>"]
     }
   ]
 }
