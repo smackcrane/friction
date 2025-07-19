@@ -1,25 +1,3 @@
-// function manualFetch() {
-//   const sentinel = document.querySelector("ytd-continuation-item-renderer");
-//   if (!sentinel?.data) {
-//     console.log("No data yet");
-//     return;
-//   }
-//   const token = sentinel.data.continuationEndpoint.continuationCommand.token;
-//   console.log("Found continuation token:", token);
-//   // ok, we found the sentinel
-//   console.log("sentinel", sentinel);
-//   const continuationToken =
-//     sentinel.getAttributeNode("data").continuationEndpoint.continuationCommand
-//       .token;
-//   sentinel.remove();
-//   console.log("Sentinel removed, continuation token:", continuationToken);
-// }
-//
-// manualFetch();
-//
-// const observer = new MutationObserver(manualFetch);
-// observer.observe(document.body, { childList: true, subtree: true });
-
 // inject fetch monkey patch
 var s = document.createElement("script");
 s.src = chrome.runtime.getURL("fetch.js");
@@ -40,10 +18,17 @@ function loadMoreButton() {
     // if no sentinel found, do nothing
     return;
   }
+  // create a button and insert it at the end of the sentinel
   const button = document.createElement("button");
   button.textContent = "Load More";
   button.id = "friction-load-more";
-  sentinel.after(button);
+  styleLoadMoreButton(button);
+  sentinel.appendChild(button);
+  // get rid of loading spinner
+  const spinner = document.querySelector(
+    "tp-yt-paper-spinner.ytd-continuation-item-renderer"
+  );
+  spinner?.remove();
 }
 
 loadMoreButton();
@@ -51,3 +36,25 @@ loadMoreButton();
 //TODO: probably just observe the button or something insetead of the whole body
 const observer = new MutationObserver(loadMoreButton);
 observer.observe(document.body, { childList: true, subtree: true });
+
+// style for button
+function styleLoadMoreButton(button) {
+  Object.assign(button.style, {
+    display: "block",
+    margin: "24px auto",
+    padding: "12px 24px",
+    fontSize: "16px",
+    borderRadius: "4px",
+    backgroundColor: "var(--yt-spec-base-background)",
+    color: "var(--yt-spec-text-primary)",
+    border: "1px solid grey",
+    cursor: "pointer",
+  });
+
+  button.onmouseenter = () => {
+    button.style.backgroundColor = "var(--yt-spec-base-hover)";
+  };
+  button.onmouseleave = () => {
+    button.style.backgroundColor = "var(--yt-spec-base-background)";
+  };
+}
