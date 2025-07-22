@@ -27,6 +27,10 @@ const rolodex = {
   "www.google.com": [
     "div:has(+div#center_col)", // google search AI overview
   ],
+  "www.facebook.com": [
+    "div.xgmub6v", // facebook top bar reels feed (1 of 3 classes, test to see if it works)
+    "div.x1unhpq9", // facebook home page feed (1 of 3 classes, test to see if it works)
+  ],
 };
 const universal = [
   "div#credential_picker_container", // "sign in with google" pop-up
