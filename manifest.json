@@ -6,7 +6,7 @@
   "description": "Remove some frictionless features of modern web apps.",
 
   "icons": {
-    "48": "icons/error-med-48.png"
+    "48": "icons/rainy-heavy-48.png"
   },
 
   "content_scripts": [
