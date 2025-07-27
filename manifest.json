@@ -1,6 +1,6 @@
 {
-  "name": "Friction",
-  "description": "Remove some frictionless features of modern web apps.",
+  "name": "Feed Eater",
+  "description": "Block algorithmic feeds, and some other bothersome web features.",
   "homepage_url": "https://github.com/smackcrane/friction",
   "author": "Sander Mack-Crane",
   "version": "1.0.0",
