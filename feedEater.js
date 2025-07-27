@@ -38,10 +38,6 @@ const rolodex = {
   "m.facebook.com": [
     // there don't seem to be any identifiable css selectors for facebook mobile, so we'll have to find another way
   ],
-  "ww.google.com": [
-    // ai overview disappeared for me? disable for now, return to it later
-    // "div:has(+div#center_col)", // the thing just before google search results, i.e. AI overview
-  ],
 };
 const universal = [
   "div#credential_picker_container", // "sign in with google" pop-up
