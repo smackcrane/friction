@@ -51,19 +51,12 @@ const universal = [
 const url = new URL(window.location.href);
 const domain = url.hostname;
 const selectors = universal.concat(rolodex[domain] ?? []);
-console.log(
-  "feedEater running on domain:",
-  domain,
-  "with selectors:",
-  selectors
-);
 
 function feedEater() {
   for (const selector of selectors) {
     const elements = document.querySelectorAll(selector);
     elements.forEach((element) => {
       element.remove();
-      console.log(`${selector} removed`);
     });
   }
 }
