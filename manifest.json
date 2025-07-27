@@ -1,18 +1,26 @@
 {
-  "manifest_version": 3,
   "name": "Friction",
-  "version": "0.1",
-
   "description": "Remove some frictionless features of modern web apps.",
+  "homepage_url": "https://github.com/smackcrane/friction",
+  "author": "Sander Mack-Crane",
+  "version": "1.0.0",
 
   "icons": {
-    "48": "icons/rainy-heavy-48.png"
+    "48": "icons/rainy-heavy-48.png",
+    "128": "icons/rainy-heavy-128.png"
   },
 
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["feedEater.js"]
+      "js": ["feedEater.js"],
+      "run_at": "document_start"
     }
-  ]
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{dd7f443b-5cb6-4dde-934d-6b08f508ede0}"
+    }
+  },
+  "manifest_version": 3
 }
