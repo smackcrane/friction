@@ -14,7 +14,7 @@
     {
       "matches": ["<all_urls>"],
       "js": ["feedEater.js"],
-      "run_at": "document_start"
+      "run_at": "document_end"
     }
   ],
   "browser_specific_settings": {
