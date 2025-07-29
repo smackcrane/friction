@@ -3,7 +3,7 @@
   "description": "Block algorithmic feeds, and some other bothersome web features.",
   "homepage_url": "https://github.com/smackcrane/friction",
   "author": "Sander Mack-Crane",
-  "version": "1.0.0",
+  "version": "1.0.2",
 
   "icons": {
     "48": "icons/rainy-heavy-48.png",
